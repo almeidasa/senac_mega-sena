@@ -8,26 +8,27 @@
         <title>Gera  Cartelas MegaSena</title>
         <style>
             .jumbotron {
+                margin-left: auto;
+                margin-right: auto;
                 height: 200px;
-                width: 600px;
+                width: 300px;
                 position: relative;
+                padding: 10px;
             }
-            .jumbotron .container {
-                position: relative;
-                top:100px;
-            }
+
         </style>
     </h:head>
-    <h:body style="padding: 50px">
+    <h:body style="padding: 10px">
         <b:jumbotron>
             <b:container fluid="true">
-                <h:form>
-                    <h:outputLabel class="form-signin-heading" value="Quantidade de Cartelas:"/>
-                    <h:inputText value="#{userData.qtn_cartelas}"/>
-                    <h:commandButton class="btn btn-lg btn-success" value ="Gerar Cartelas"
+                <b:form>
+                    <b:panelGrid columns="1" >
+                    <h:outputLabel value="Quantidade de Cartelas:&nbsp;"/>
+                    <b:inputText id="teste" class="form-control" value="#{userData.qtn_cartelas}"/>
+                    <b:commandButton class="btn btn-lg btn-success" value ="Gerar Cartelas"
                                      action ="#{userData.addEmployee()}"/>
-
-                </h:form>
+                    </b:panelGrid>
+                </b:form>
             </b:container>
         </b:jumbotron>
     </h:body>
