@@ -8,15 +8,26 @@
       xmlns:f = "http://java.sun.com/jsf/core">
 
     <h:head>
-        <title>Cartelas MegaSena</title>			
+        <title>Cartelas MegaSena</title>
+        <style>
+            body {
+                padding: 20px;
+            }
+            .dataTable {
+                background-color: #cccccc;
+            }
+            .row {
+                padding: 10px;
+            }
+        </style>
     </h:head>
 
-    <h:body style="padding: 10px"> 
+    <h:body> 
         <h2>Cartelas</h2>
-        <h:form>
-            <b:dataTable class="table" value = "#{userData.employees}"
+        <b:row>
+            <b:dataTable customLangUrl="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json" class="table table-striped table-bordered" style="width:100%" value = "#{userData.employees}"
                          var="employee"
-                         excel="true" pdf="true" >
+                         excel="true" pdf="true" print="true" responsive="true">
 
                 <b:dataTableColumn value="#{employee.nome}"/>
                 <b:dataTableColumn value="#{employee.um}"/>
@@ -26,8 +37,11 @@
                 <b:dataTableColumn value="#{employee.cinco}"/>
                 <b:dataTableColumn value="#{employee.seis}"/>
             </b:dataTable>
-        </h:form>
+        </b:row>
 
-        <a href="/MegaSena/formulario.xhtml" class="btn btn-lg btn-danger">Voltar</a>
+
+        <b:button icon-rotate="l" iconAwesome="thumbs-up"
+                  value="Voltar" href="/MegaSena/formulario.xhtml"
+                  class="btn btn-lg btn-danger" title="icon-rotate='l'" />
     </h:body>
 </html>

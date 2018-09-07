@@ -18,22 +18,25 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class UserData {
-
+    private static int cont=0;
     private int qtn_cartelas;
     static final List<Integer> numeros = new ArrayList<>();
 
-    private static int geraNumeros() {
+    private static Cartela geraCartela() {
         for (int i = 1; i < 61; i++) { //Sequencia da mega sena
             numeros.add(i);
         }
         //Embaralhamos os números:
         Collections.shuffle(numeros);
 
-        return numeros.get((int) (Math.random() * 60));
+        Cartela cartela = new Cartela("Cartela " + cont, numeros.get(1), numeros.get(2), 
+                numeros.get(3), numeros.get(4), numeros.get(5), numeros.get(6));
+        
+        return cartela;
     }
 
     private static final ArrayList<Cartela> employees = new ArrayList<Cartela>(Arrays.asList(
-            new Cartela("retirar", geraNumeros(), geraNumeros(), geraNumeros(), geraNumeros(), geraNumeros(), geraNumeros())
+            new Cartela("retirar", 0, 0, 0, 0, 0, 0)
     ));
 
     public ArrayList<Cartela> getEmployees() {
@@ -43,8 +46,8 @@ public class UserData {
     public String addEmployee() {
         employees.clear();
         for (int i = 1; i <= qtn_cartelas; i++) {
-            Cartela cartela = new Cartela("Cartela " + i, geraNumeros(), geraNumeros(), geraNumeros(), geraNumeros(), geraNumeros(), geraNumeros());
-            employees.add(cartela);
+            cont = i;
+            employees.add(geraCartela());
         }
         return "home";
     }

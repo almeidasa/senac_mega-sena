@@ -5,8 +5,11 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
     <h:head>
-        <title>Gera  Cartelas MegaSena</title>
+        <title>Gerar Cartelas MegaSena</title>
         <style>
+            body {
+                background-image: url(http://pngimage.net/wp-content/uploads/2018/05/connessione-png-6.png);
+            }
             .jumbotron {
                 margin-left: auto;
                 margin-right: auto;
@@ -23,10 +26,13 @@
             <b:container fluid="true">
                 <b:form>
                     <b:panelGrid columns="1" >
-                    <h:outputLabel value="Quantidade de Cartelas:&nbsp;"/>
-                    <b:inputText id="teste" class="form-control" value="#{userData.qtn_cartelas}"/>
-                    <b:commandButton class="btn btn-lg btn-success" value ="Gerar Cartelas"
-                                     action ="#{userData.addEmployee()}"/>
+                        <h:outputLabel value="Quantidade de Cartelas:&nbsp;"/>
+                        <b:inputText type="number" class="form-control" value="#{userData.qtn_cartelas}"/>
+
+                        <b:commandButton icon-spin="true" iconAwesome="thumbs-down"
+                                         value="Gerar Cartelas" action="#{userData.addEmployee()}"
+                                         class="btn btn-lg btn-success" title="spin='true'" />
+
                     </b:panelGrid>
                 </b:form>
             </b:container>
