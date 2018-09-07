@@ -17,7 +17,7 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean
 @SessionScoped
-public class UserData {
+public class GerarCartelas {
     private static int cont=0;
     private int qtn_cartelas;
     static final List<Integer> numeros = new ArrayList<>();
