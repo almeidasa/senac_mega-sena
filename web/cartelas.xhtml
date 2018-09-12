@@ -11,20 +11,23 @@
         <title>Cartelas MegaSena</title>
         <style>
             body {
+                background-image: url(_img/trevo2.jpg);
                 padding: 20px;
             }
             .dataTable {
-                background-color: #cccccc;
+                background-color: #e0fee0;
             }
-            .row {
+            .panel {
+                margin-left: auto;
+                margin-right: auto;
+                height: auto;
+                position: relative;
                 padding: 10px;
             }
         </style>
     </h:head>
-
-    <h:body> 
-        <h2>Cartelas</h2>
-        <b:row>
+    <h:body>        
+        <b:panel title="Cartelas" look="success">
             <b:dataTable customLangUrl="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json" class="table table-striped table-bordered" style="width:100%" value = "#{gerarCartelas.employees}"
                          var="employee"
                          excel="true" pdf="true" print="true" responsive="true">
@@ -37,11 +40,9 @@
                 <b:dataTableColumn value="#{employee.cinco}"/>
                 <b:dataTableColumn value="#{employee.seis}"/>
             </b:dataTable>
-        </b:row>
-
-
-        <b:button icon-rotate="l" iconAwesome="thumbs-up"
-                  value="Voltar" href="/MegaSena/formulario.xhtml"
-                  class="btn btn-lg btn-danger" title="icon-rotate='l'" />
+            <b:button icon-rotate="l" iconAwesome="thumbs-up"
+                      value="Voltar" href="/MegaSena/formulario.xhtml"
+                      class="btn btn-lg btn-danger" title="icon-rotate='l'" />
+        </b:panel>
     </h:body>
 </html>

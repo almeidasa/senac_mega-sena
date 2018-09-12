@@ -49,7 +49,7 @@ public class GerarCartelas {
             cont = i;
             employees.add(geraCartela());
         }
-        return "home";
+        return "cartelas";
     }
 
     public int getQtn_cartelas() {
