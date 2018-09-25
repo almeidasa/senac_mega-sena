@@ -9,14 +9,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
+
 
 /**
  *
  * @author Alexandre
  */
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class GerarCartelas {
     private static int cont=0;
     private int qtn_cartelas;
